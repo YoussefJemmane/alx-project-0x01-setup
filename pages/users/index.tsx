@@ -6,10 +6,10 @@ import { useState } from "react";
 
 const Users: React.FC<{posts: UserProps[]}> = ({ posts }) => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [user, setUser] = useState<UserData | null>(null);
+  const [user, setUser] = useState<UserProps | null>(null);
 
-  const handleAddUser = (newUser: UserData) => {
-    setUser({ ...newUser, id: posts.length + 1 });
+  const handleAddUser = (newUser: UserProps) => {
+    setUser(newUser);
   };
 
   return (
