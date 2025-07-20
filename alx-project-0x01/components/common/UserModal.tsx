@@ -66,7 +66,8 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(user);
+    const userProps = { ...user, id: user.id || 1 }; // Convert UserData to UserProps
+    onSubmit(userProps);
     onClose();
   };
 
